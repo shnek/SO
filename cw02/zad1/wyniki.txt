@@ -1,0 +1,43 @@
+Test dla 2048 4-bajtowych rekordów:
+Sortowanie z użyciem biblioteki:
+real: 	3.324655
+user: 	0.540000
+sys: 	2.780000
+Sortowanie z użyciem funkcji systemowych:
+real: 	4.220358
+user: 	0.410000
+sys: 	3.800000
+
+Test dla 2048 512-bajtowych rekordów:
+Sortowanie z użyciem biblioteki:
+real: 	3.672878
+user: 	0.700000
+sys: 	2.960000
+Sortowanie z użyciem funkcji systemowych:
+real: 	4.397667
+user: 	0.380000
+sys: 	4.010000
+
+Test dla 2048 4096-bajtowych rekordów:
+Sortowanie z użyciem biblioteki:
+real: 	8.808977
+user: 	1.710000
+sys: 	7.090000
+Sortowanie z użyciem funkcji systemowych:
+real: 	8.466750
+user: 	0.390000
+sys: 	8.070000
+
+Test dla 2048 8192-bajtowych rekordów:
+Sortowanie z użyciem biblioteki:
+real: 	9.037245
+user: 	0.600000
+sys: 	8.430000
+Sortowanie z użyciem funkcji systemowych:
+real: 	13.355333
+user: 	0.460000
+sys: 	12.890000
+
+Wnioski:
+Wraz ze zwiększaniem objętości rekordów zwiększa się czas sortowanie zarówno przy użyciu funkcji bibliotecznych jak i systemowych.
+Funkcje biblioteczne są szybsze. Spowodowane jest to najprawdopodobniej tym, że funkcje z biblioteki są buforowane, co zwiększa ich szybkość.

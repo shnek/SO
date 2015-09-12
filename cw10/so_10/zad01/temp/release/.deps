@@ -1,0 +1,6 @@
+/home/kuba/Documents/SysOpy/SynowiecJakub/cw10/so_10/zad01/temp/release/client.o: \
+ /home/kuba/Documents/SysOpy/SynowiecJakub/cw10/so_10/zad01/src/client.c
+/home/kuba/Documents/SysOpy/SynowiecJakub/cw10/so_10/zad01/temp/release/main.o: \
+ /home/kuba/Documents/SysOpy/SynowiecJakub/cw10/so_10/zad01/src/main.c
+/home/kuba/Documents/SysOpy/SynowiecJakub/cw10/so_10/zad01/temp/release/server.o: \
+ /home/kuba/Documents/SysOpy/SynowiecJakub/cw10/so_10/zad01/src/server.c

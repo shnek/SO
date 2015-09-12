@@ -1,0 +1,16 @@
+data/zad01/src/main.c.i
+data/zad01/main.c.i
+data/src/main.c.i
+data/zad01/src/client.c.i
+data/zad01/src/clientUnix.c.i
+data/zad01/CMakeLists.txt.i
+data/.hgignore.i
+data/zad01/server.c.i
+data/zad01/src/server.c.i
+data/zad01/makefile.i
+data/zad01/src/makefile.i
+data/zad01/src/makefile~.i
+data/zad01/client.c.i
+data/Makefile.i
+data/zad01/Makefile.i
+data/CMakeLists.txt.i

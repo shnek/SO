@@ -1,0 +1,43 @@
+CZĘŚĆ I:
+1. Żaden wątek nie ma zamaskowanego sygnału, sygnał do procesu
+a)SIGUSR1 - komunikat [1]+  Killed                  ./zadanie
+b)SIGTERM - komunikat "Terminated"
+c)SIGKILL - komunikat "Killed"
+d)SIGSTOP - komunikat [1]+  Stopped                 ./zadanie
+oraz powrot do linii
+
+W punkcie 1 program kończył działanie za każdym razem oprócz SIGSTOP. Jednakże konsola, w którym program został uruchomiony powróciła do znaku zachęty i przy wysłaniu SIGCONT program działał już w tle.
+
+2. Wątek główny ma zamaskowany sygnał, pozostałe nie, sygnał do procesu
+a)SIGUSR1 - maska przechwytuje sygnał, komunikat "User definied signal 1"
+b)SIGTERM - komunikat "Terminated"
+c)SIGKILL - komunikat "Killed"
+d)SIGSTOP - komunikat "Stopped", powrót do linii poleceń
+
+3. Wszystkie wątki mają procedurę obsługi sygnału, sygnał do procesu
+a)SIGUSR1 - wykonana procedura obsługi sygnału
+b)SIGTERM - wykonana procedura obsługi sygnału
+c)SIGKILL - komunikat "[2]+ Killed, Killed"
+d)SIGSTOP - komunikat "Stopped", powrót do linii poleceń
+
+4. Wysyłanie do wątku z zamaskowanym tym sygnałem:
+a)SIGUSR1 - brak reakcji
+b)SIGTERM - brak reakcji
+c)SIGKILL - komunikat "Killed", koniec działania programu
+d)SIGSTOP - komunikat "[1]+  Stopped - przerwa w działaniu programu oraz powrót do linii poleceń
+
+5. Wysyłanie do wątku z procedurą obsługi sygnału
+a)SIGUSR1 - wykonana funkcja przechwycenia sygnału, kontynuacja zadania
+b)SIGTERM - wykonana funkcja przechwycenia sygnału, kontynuacja zadania
+c)SIGKILL - komunikat "Killed", koniec działania programu
+d)SIGSTOP - komunikat "[1]+  Stopped - przerwa w działaniu programu oraz powrót do linii poleceń
+
+CZĘŚĆ II:
+
+Po wykonaniu dzielenia przez 0:
+- w wątku w ktorym doszlo do tego zdarzenia łapany jest sygnał nr 8 (cały czas)
+- do pozostałych wątków nie dociera sygnał SIGFPE (generowany dla dzielenia przez zero)
+
+Test został przeprowadzony dla systemu Ubuntu 64 bit w wersji 14.04 LTS
+Jądra 3.16.0-38-generic
+Testowany komputer to laptop ASUS N551JH z procesorem Intel Core i7 4710HQ, 12GB ram.

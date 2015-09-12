@@ -1,0 +1,208 @@
+results = read.csv("results.txt")
+
+wykres = results[results$type=="system",]
+dane1 = wykres[wykres$algo=="fork",]
+dane2 = wykres[wykres$algo=="vfork",]
+dane3 = wykres[wykres$algo=="clone",]
+dane4 = wykres[wykres$algo=="clonev",]
+
+postscript("system.eps", width =12, height =6, horizontal = FALSE, onefile = FALSE)
+
+
+plot(dane1$time ~ dane1$N, type="o", lty = 1, xlab = "N", ylab = "Computing time in seconds", col ="blue")
+lines(dane2$time ~ dane2$N, type="o", lty = 2, col = "red")
+lines(dane3$time ~ dane3$N, type="o", lty = 3, col = "black")
+lines(dane4$time ~ dane4$N, type="o", lty = 4, col = "green")
+legend("topleft", c("fork","vfork","clone","vclone"), col=c("blue","red","black","green"), lty=1:2)
+
+dev.off()
+
+
+wykres = results[results$type=="user",]
+dane1 = wykres[wykres$algo=="fork",]
+dane2 = wykres[wykres$algo=="vfork",]
+dane3 = wykres[wykres$algo=="clone",]
+dane4 = wykres[wykres$algo=="clonev",]
+
+# pdf(file="user.pdf", height=2, width=12, bg="white")
+postscript("user.eps", width = 12, height = 6, horizontal = FALSE, onefile = FALSE)
+
+
+plot(dane1$time ~ dane1$N, type="o", lty = 1, xlab = "N", ylab = "Computing time in seconds", col ="blue")
+lines(dane2$time ~ dane2$N, type="o", lty = 2, col = "red")
+lines(dane3$time ~ dane3$N, type="o", lty = 3, col = "black")
+lines(dane4$time ~ dane4$N, type="o", lty = 4, col = "green")
+legend("topleft", c("fork","vfork","clone","vclone"), col=c("blue","red","black","green"), lty=1:2)
+dev.off()
+
+wykres = results[results$type=="real",]
+dane1 = wykres[wykres$algo=="fork",]
+dane2 = wykres[wykres$algo=="vfork",]
+dane3 = wykres[wykres$algo=="clone",]
+dane4 = wykres[wykres$algo=="clonev",]
+
+# pdf(file="real.pdf", height=2, width=12, bg="white")
+postscript("real.eps", width = 12, height = 6, horizontal = FALSE, onefile = FALSE)
+
+
+plot(dane1$time ~ dane1$N, type="o", lty = 1, xlab = "N", ylab = "Computing time in seconds", col ="blue")
+lines(dane2$time ~ dane2$N, type="o", lty = 2, col = "red")
+lines(dane3$time ~ dane3$N, type="o", lty = 3, col = "black")
+lines(dane4$time ~ dane4$N, type="o", lty = 4, col = "green")
+legend("topleft", c("fork","vfork","clone","vclone"), col=c("blue","red","black","green"), lty=1:2)
+dev.off()
+
+wykres = results[results$type=="user+system",]
+dane1 = wykres[wykres$algo=="fork",]
+dane2 = wykres[wykres$algo=="vfork",]
+dane3 = wykres[wykres$algo=="clone",]
+dane4 = wykres[wykres$algo=="clonev",]
+
+# pdf(file="user+system.pdf", height=2, width=12, bg="white")
+postscript("user+system.eps", width = 12, height = 6, horizontal = FALSE, onefile = FALSE)
+
+
+plot(dane1$time ~ dane1$N, type="o", lty = 1, xlab = "N", ylab = "Computing time in seconds", col ="blue")
+lines(dane2$time ~ dane2$N, type="o", lty = 2, col = "red")
+lines(dane3$time ~ dane3$N, type="o", lty = 3, col = "black")
+lines(dane4$time ~ dane4$N, type="o", lty = 4, col = "green")
+legend("topleft", c("fork","vfork","clone","vclone"), col=c("blue","red","black","green"), lty=1:2)
+dev.off()
+
+wykres = results[results$type=="child_user",]
+dane1 = wykres[wykres$algo=="fork",]
+dane2 = wykres[wykres$algo=="vfork",]
+dane3 = wykres[wykres$algo=="clone",]
+dane4 = wykres[wykres$algo=="clonev",]
+
+# pdf(file="child_user.pdf", height=2, width=12, bg="white")
+postscript("child_user.eps", width = 12, height = 6, horizontal = FALSE, onefile = FALSE)
+
+
+plot(dane1$time ~ dane1$N, type="o", lty = 1, xlab = "N", ylab = "Computing time in seconds", col ="blue")
+lines(dane2$time ~ dane2$N, type="o", lty = 2, col = "red")
+lines(dane3$time ~ dane3$N, type="o", lty = 3, col = "black")
+lines(dane4$time ~ dane4$N, type="o", lty = 4, col = "green")
+legend("topleft", c("fork","vfork","clone","vclone"), col=c("blue","red","black","green"), lty=1:2)
+dev.off()
+
+wykres = results[results$type=="child_system",]
+dane1 = wykres[wykres$algo=="fork",]
+dane2 = wykres[wykres$algo=="vfork",]
+dane3 = wykres[wykres$algo=="clone",]
+dane4 = wykres[wykres$algo=="clonev",]
+
+# pdf(file="child_system.pdf", height=2, width=12, bg="white")
+postscript("child_system.eps", width = 12, height = 6, horizontal = FALSE, onefile = FALSE)
+
+
+plot(dane1$time ~ dane1$N, type="o", lty = 1, xlab = "N", ylab = "Computing time in seconds", col ="blue")
+lines(dane2$time ~ dane2$N, type="o", lty = 2, col = "red")
+lines(dane3$time ~ dane3$N, type="o", lty = 3, col = "black")
+lines(dane4$time ~ dane4$N, type="o", lty = 4, col = "green")
+legend("topleft", c("fork","vfork","clone","vclone"), col=c("blue","red","black","green"), lty=1:2)
+dev.off()
+
+wykres = results[results$type=="child_real",]
+dane1 = wykres[wykres$algo=="fork",]
+dane2 = wykres[wykres$algo=="vfork",]
+dane3 = wykres[wykres$algo=="clone",]
+dane4 = wykres[wykres$algo=="clonev",]
+
+# pdf(file="child_real.pdf", height=2, width=12, bg="white")
+postscript("child_real.eps", width = 12, height = 6, horizontal = FALSE, onefile = FALSE)
+
+
+plot(dane1$time ~ dane1$N, type="o", lty = 1, xlab = "N", ylab = "Computing time in seconds", col ="blue")
+lines(dane2$time ~ dane2$N, type="o", lty = 2, col = "red")
+lines(dane3$time ~ dane3$N, type="o", lty = 3, col = "black")
+lines(dane4$time ~ dane4$N, type="o", lty = 4, col = "green")
+legend("topleft", c("fork","vfork","clone","vclone"), col=c("blue","red","black","green"), lty=1:2)
+dev.off()
+
+wykres = results[results$type=="child_user+system",]
+dane1 = wykres[wykres$algo=="fork",]
+dane2 = wykres[wykres$algo=="vfork",]
+dane3 = wykres[wykres$algo=="clone",]
+dane4 = wykres[wykres$algo=="clonev",]
+
+# pdf(file="child_user+system.pdf", height=2, width=12, bg="white")
+postscript("child_user+system.eps", width = 12, height = 4, horizontal = FALSE, onefile = FALSE)
+
+
+plot(dane1$time ~ dane1$N, type="o", lty = 1, xlab = "N", ylab = "Computing time in seconds", col ="blue")
+lines(dane2$time ~ dane2$N, type="o", lty = 2, col = "red")
+lines(dane3$time ~ dane3$N, type="o", lty = 3, col = "black")
+lines(dane4$time ~ dane4$N, type="o", lty = 4, col = "green")
+legend("topleft", c("fork","vfork","clone","vclone"), col=c("blue","red","black","green"), lty=1:2)
+dev.off()
+
+
+wykres = results[results$type=="parent+child_real",]
+dane1 = wykres[wykres$algo=="fork",]
+dane2 = wykres[wykres$algo=="vfork",]
+dane3 = wykres[wykres$algo=="clone",]
+dane4 = wykres[wykres$algo=="clonev",]
+
+# pdf(file="parent+child_real.pdf", height=2, width=12, bg="white")
+postscript("parent+child_real.eps", width = 12, height = 6, horizontal = FALSE, onefile = FALSE)
+
+
+plot(dane1$time ~ dane1$N, type="o", lty = 1, xlab = "N", ylab = "Computing time in seconds", col ="blue")
+lines(dane2$time ~ dane2$N, type="o", lty = 2, col = "red")
+lines(dane3$time ~ dane3$N, type="o", lty = 3, col = "black")
+lines(dane4$time ~ dane4$N, type="o", lty = 4, col = "green")
+legend("topleft", c("fork","vfork","clone","vclone"), col=c("blue","red","black","green"), lty=1:2)
+dev.off()
+
+wykres = results[results$type=="parent+child_user",]
+dane1 = wykres[wykres$algo=="fork",]
+dane2 = wykres[wykres$algo=="vfork",]
+dane3 = wykres[wykres$algo=="clone",]
+dane4 = wykres[wykres$algo=="clonev",]
+
+# pdf(file="parent+child_user.pdf", height=2, width=12, bg="white")
+postscript("parent+child_user.eps", width=12, height=6, horizontal = FALSE, onefile = FALSE)
+
+
+plot(dane1$time ~ dane1$N, type="o", lty = 1, xlab = "N", ylab = "Computing time in seconds", col ="blue")
+lines(dane2$time ~ dane2$N, type="o", lty = 2, col = "red")
+lines(dane3$time ~ dane3$N, type="o", lty = 3, col = "black")
+lines(dane4$time ~ dane4$N, type="o", lty = 4, col = "green")
+legend("topleft", c("fork","vfork","clone","vclone"), col=c("blue","red","black","green"), lty=1:2)
+dev.off()
+
+wykres = results[results$type=="parent+child_system",]
+dane1 = wykres[wykres$algo=="fork",]
+dane2 = wykres[wykres$algo=="vfork",]
+dane3 = wykres[wykres$algo=="clone",]
+dane4 = wykres[wykres$algo=="clonev",]
+
+# pdf(file="parent+child_system.pdf", height=2, width=12, bg="white")
+postscript("parent+child_system.eps", width = 12, height = 6, horizontal = FALSE, onefile = FALSE)
+
+
+plot(dane1$time ~ dane1$N, type="o", lty = 1, xlab = "N", ylab = "Computing time in seconds", col ="blue")
+lines(dane2$time ~ dane2$N, type="o", lty = 2, col = "red")
+lines(dane3$time ~ dane3$N, type="o", lty = 3, col = "black")
+lines(dane4$time ~ dane4$N, type="o", lty = 4, col = "green")
+legend("topleft", c("fork","vfork","clone","vclone"), col=c("blue","red","black","green"), lty=1:2)
+dev.off()
+
+wykres = results[results$type=="parent+child_user+system",]
+dane1 = wykres[wykres$algo=="fork",]
+dane2 = wykres[wykres$algo=="vfork",]
+dane3 = wykres[wykres$algo=="clone",]
+dane4 = wykres[wykres$algo=="clonev",]
+
+# pdf(file="parent+child_user+system.pdf", height=2, width=12, bg="white")
+postscript("parent+child_user+system.eps", width = 12, height = 6, horizontal = FALSE, onefile = FALSE)
+
+
+plot(dane1$time ~ dane1$N, type="o", lty = 1, xlab = "N", ylab = "Computing time in seconds", col ="blue")
+lines(dane2$time ~ dane2$N, type="o", lty = 2, col = "red")
+lines(dane3$time ~ dane3$N, type="o", lty = 3, col = "black")
+lines(dane4$time ~ dane4$N, type="o", lty = 4, col = "green")
+legend("topleft", c("fork","vfork","clone","vclone"), col=c("blue","red","black","green"), lty=1:2)
+dev.off()
+
